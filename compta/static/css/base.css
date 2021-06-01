@@ -1,0 +1,131 @@
+/* feuille de style de base, utilisée sur la plupart des pages du site pour la mise en page des éléments récurrents du site */
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: "Lato", sans-serif;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+
+/* barre de navigation */
+#navBar {
+    transition: margin-left .5s;
+    position: relative;
+    z-index: 5;
+    top: 0;
+}
+
+#navBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #66A9EC;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#navBar > ul > li {
+  float: left;
+}
+
+#navBar > ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navBar > ul > li > a:hover {
+    color: black;
+    background-color: lightblue;
+}
+
+
+/* corps du site */
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    height: 100%;
+    margin-top:52px;
+}
+
+/* pied de page */
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: #66A9EC;
+    color: white;
+    transition: margin-left .5s;
+}
+
+/* barre latérale */
+/* bouton d'ouverture */
+#openNav {
+    transition: margin-left .5s 0.2s;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sideNav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ECECEC;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sideNav a, .sideNav .dropdown-btn {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sideNav a:hover, .dropdown-btn:hover {
+    color: darkgray;
+}
+
+
+.sideNav .closeBtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.tabcontent {
+  display: none;
+}
+
+/* classe appliquée sur le section en cour de la navigation*/
+.sidenav a, .dropdown-btn {
+
+    display: block;
+  
+  }
+  
+.dropdown-container {
+    display: none;
+    background-color: #FDFDFD;
+    padding-left: 8px;
+}

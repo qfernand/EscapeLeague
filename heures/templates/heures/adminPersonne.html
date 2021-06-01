@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="Personne" class="tabcontent">
+        <a class="btn btn-primary col-md-3" href="./nouvellePersonne">Ajouter une Personne</a>
+        {% if noPersonne %}
+            </br><h1>Il n'y a aucune Personne</h1>
+            
+        {% else %}
+        <table class="table table-striped">
+    		    <thread class="thread-dark">
+			<tr>
+				<th scope="col">Nom de la personne</th>
+				<th scope="col"></th>
+			</tr>
+	</thread>
+    {% for personne in personnes %}
+				<tr>
+					<td><p>{{ personne.prenom }}</p></td>
+					
+					<td>
+						<a type="button" href="" class="btn btn-primary">
+							Accéder
+						</a>
+						  <a type="button" class="btn btn-outline-danger active" href="{% url 'deletePersonne' personne.id %}" >Supprimer</a>
+					</td>
+				</tr>
+		{% endfor %}
+        </table>
+        {% endif %}
+    </div>
+
+{% endblock %}

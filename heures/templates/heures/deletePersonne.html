@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/formStyle.css" %}">
+{% endblock %}
+
+{% block content %}
+    <span id="openNav" onclick="Nav()">&#9776; Menu</span>
+
+    <div id="form-id">
+       <form method="post" action="">
+            {% csrf_token %}
+            <div class="alert alert-danger" role="alert">
+                Si vous supprimez cette personne, vous perdrez toutes les données liées à cette personne (notamment les heures comptées travaillées)
+                <p>
+                    <ul>
+                        {{ deletable_objects|unordered_list }}
+                    </ul>
+                </p>
+            </div>
+            <p>Voulez vous supprimer "{{ Personne.prenom}} {{ Personne.nom }}" ?</p>
+
+            <input class="btn btn-outline-danger active" type="submit" value="Supprimer"/>
+            <a class="btn btn-basic" href="/heures/adminPersonne">Annuler</a>
+        </form>
+    </div>
+{% endblock %}
